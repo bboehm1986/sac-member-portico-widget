@@ -1,0 +1,51 @@
+{
+    "id": "com.porticobenefits.memberportico",
+    "name": "Portico Employee Enrollment",
+    "version": "1.0.0",
+    "vendor": "Portico Benefits",
+    "license": "",
+    "eula": "",
+    "description": "Single focused dashboard for Portico's own ~200 employees, for HR: headline completion stats plus a full per-employee table, sorted so anyone needing follow-up shows up first. Built 2026-10-01 after Blair pointed out that mirroring the full 3-widget general-member suite was overkill for a population this small.",
+    "newInstancePrefix": "MemberPortico",
+    "icon": "https://bboehm1986.github.io/sac-member-portico-widget/icon.svg",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "com-porticobenefits-memberportico",
+            "url": "https://bboehm1986.github.io/sac-member-portico-widget/main.js",
+            "integrity": "sha384-mdpbduqGiwCNP+nmvF4c5AjwuSXM5BSYWkCSrF19XPxwvFkRD5Oo2z0gvsS0zUNU"
+        }
+    ],
+    "properties": {
+        "width": {
+            "type": "integer",
+            "default": 900
+        },
+        "height": {
+            "type": "integer",
+            "default": 560
+        }
+    },
+    "dataBindings": {
+        "memberDetail": {
+            "feeds": [
+                {
+                    "id": "dimensions",
+                    "description": "Same model/shape as sac-member-detail-widget's memberDetail binding -- Member / Wave / Enrollment_Status / Defaulted / Defaulted_Timing / Membership_Type / Member_Health_Coverage / Vision_Plan / Set_Up_Date / Completed_Date / Abandoned_Date / Is_Portico_Employee, from GLD_AE_Member_Enrollment directly (row-level, PII-bearing) via AM_MEMBER_ENROLLMENT_DETAIL. This widget filters to Is_Portico_Employee = 'Yes' (opposite of the main suite's exclusion) and shows every matching row directly -- no Input Control needed, population is small enough (~200) to list in full.",
+                    "type": "dimension"
+                },
+                {
+                    "id": "measures",
+                    "description": "Total_Attempts, HSA_Election_Amount, FSA_Health_Election_Amount, FSA_Dependent_Election_Amount, SuppLife_Member_Amount, SuppLife_Spouse_Amount, SuppLife_Dependent_Amount, Retirement_Pretax_Amount, Retirement_Roth_Amount, Eligible_Count, Health_Covered_Count -- in that exact order. The last two (Eligible_Count/Health_Covered_Count) are already on AM_MEMBER_ENROLLMENT_DETAIL but not yet used by sac-member-detail-widget itself -- added here per Blair's request. Still NULL in real Gold pending BR-29 (vDimMember fan-out fix).",
+                    "type": "mainStructureMember"
+                }
+            ]
+        }
+    },
+    "methods": {
+        "refresh": {
+            "description": "Re-renders the dashboard from the currently bound data"
+        }
+    },
+    "events": {}
+}

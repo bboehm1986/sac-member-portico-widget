@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Portico Employee Enrollment — local preview</title>
+<style>
+  body { margin: 0; padding: 20px; background: #eef1f4; font-family: Arial, sans-serif; }
+  h2 { font-family: Arial, sans-serif; color: #333; }
+  com-porticobenefits-memberportico { display: block; width: 820px; height: 560px; }
+</style>
+</head>
+<body>
+<h2>Portico Employee Enrollment — standalone preview (mock data, exercises the real SAC widget lifecycle hooks)</h2>
+<com-porticobenefits-memberportico id="widget"></com-porticobenefits-memberportico>
+
+<script src="main.js"></script>
+<script>
+  const widget = document.getElementById("widget");
+  widget.onCustomWidgetBeforeUpdate({ width: 820, height: 560 });
+  widget.onCustomWidgetAfterUpdate({ width: 820, height: 560 });
+</script>
+</body>
+</html>
