@@ -1,7 +1,7 @@
 {
     "id": "com.porticobenefits.memberportico",
     "name": "Portico Employee Enrollment",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "vendor": "Portico Benefits",
     "license": "",
     "eula": "",
@@ -13,7 +13,7 @@
             "kind": "main",
             "tag": "com-porticobenefits-memberportico",
             "url": "https://bboehm1986.github.io/sac-member-portico-widget/main.js",
-            "integrity": "sha384-jliIULKmR/kuQ3b3xLRAQfvO7SlK16LVGzZwaQyQ5G74DPqjsbyattE3OVT3tCyp"
+            "integrity": "sha384-Y4+r7BWs30x5fQN+l41Ak1lO8hWq5Yy8CEIx9fcp279oEy9+oWL04Z9YI+7kvupu"
         }
     ],
     "properties": {

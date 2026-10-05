@@ -251,7 +251,11 @@
             // with the prior-cycle row alongside for comparison. If
             // EventDate isn't bound, fall back to treating every row as
             // current and say so.
-            const eventDateBound = allRows.some((m) => m.eventYear > 0);
+            // Judge "bound" from what SAC actually sent (before the Portico
+            // filter): when no Portico rows exist, allRows is empty, which
+            // must not be mistaken for a missing EventDate binding. No data
+            // at all means nothing to infer, so don't warn.
+            const eventDateBound = rawRows.length === 0 || rawRows.some((r) => eventYear(this._dim(r, 12)) > 0);
             const priorByMember = {};
             if (eventDateBound) allRows.filter((m) => m.eventYear === PRIOR_EVENT_YEAR).forEach((m) => { priorByMember[m.member] = m; });
             const rows = eventDateBound ? allRows.filter((m) => m.eventYear === CURRENT_EVENT_YEAR) : allRows;
