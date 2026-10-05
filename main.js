@@ -53,21 +53,38 @@
     // BR-29 (the same vDimMember fan-out gate from earlier in this build).
     // Wired up now anyway so nothing needs to change once that's fixed.
     const MOCK_PORTICO_DETAIL = { data: [
-        row(["40001", "Wave 1", "Success", "No", "N/A", "Other", "silver", "silver", "2026-10-19", "2026-10-22", "", "Yes"], [1, 500, 250, 0, 25, 0, 0, 88, 0, 2, 2]),
-        row(["40002", "Wave 1", "Success", "No", "N/A", "Other", "gold", "gold", "2026-10-20", "2026-10-25", "", "Yes"], [1, 1000, 0, 0, 20, 10, 0, 0, 145, 4, 4]),
-        row(["40003", "Wave 1", "Abandoned", "Yes", "Before PSP", "Other", "waived", "", "2026-10-19", "", "2026-10-30", "Yes"], [2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
-        row(["40004", "Wave 1", "Success", "No", "N/A", "Other", "silver", "", "2026-10-21", "2026-10-24", "", "Yes"], [1, 500, 0, 0, 0, 0, 0, 65, 0, 1, 1]),
-        row(["40005", "Wave 1", "Needs Follow-up", "No", "N/A", "Other", "", "", "2026-10-19", "", "", "Yes"], [3, 0, 0, 0, 10, 0, 0, 0, 0, 3, 0]),
-        row(["40006", "Wave 2a", "Success", "No", "N/A", "Other", "gold", "gold", "2026-11-09", "2026-11-12", "", "Yes"], [1, 1000, 500, 0, 0, 0, 0, 0, 120, 3, 3]),
-        row(["40007", "Wave 2a", "In Progress", "No", "N/A", "Other", "", "", "2026-11-10", "", "", "Yes"], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
-        row(["40008", "Wave 2a", "Not Started", "No", "N/A", "Other", "", "", "", "", "", "Yes"], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
-        row(["40009", "Wave 1", "Success", "No", "N/A", "Other", "silver", "", "2026-10-22", "2026-10-27", "", "Yes"], [1, 500, 250, 0, 0, 0, 0, 0, 0, 2, 2]),
-        row(["40010", "Wave 1", "Abandoned", "Yes", "After PSP", "Other", "waived", "", "2026-10-19", "", "2026-11-05", "Yes"], [2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
-        row(["40011", "Wave 2b", "Success", "No", "N/A", "Other", "gold", "gold", "2026-11-09", "2026-11-14", "", "Yes"], [1, 1000, 0, 0, 25, 0, 0, 0, 0, 5, 5]),
-        row(["40012", "Wave 1", "Not Started", "No", "N/A", "Other", "", "", "", "", "", "Yes"], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
-        row(["40013", "Wave 1", "Success", "No", "N/A", "Other", "silver", "silver", "2026-10-23", "2026-10-28", "", "Yes"], [1, 500, 0, 0, 0, 0, 0, 88, 0, 2, 2]),
-        row(["40014", "Wave 2a", "Needs Follow-up", "No", "N/A", "Other", "", "", "2026-11-09", "", "", "Yes"], [2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
+        row(["40001", "Wave 1", "Success", "No", "N/A", "Other", "silver", "silver", "2026-10-19", "2026-10-22", "", "Yes", "2027-01-01"], [1, 500, 250, 0, 25, 0, 0, 88, 0, 2, 2]),
+        row(["40002", "Wave 1", "Success", "No", "N/A", "Other", "gold", "gold", "2026-10-20", "2026-10-25", "", "Yes", "2027-01-01"], [1, 1000, 0, 0, 20, 10, 0, 0, 145, 4, 4]),
+        row(["40003", "Wave 1", "Abandoned", "Yes", "Before PSP", "Other", "waived", "", "2026-10-19", "", "2026-10-30", "Yes", "2027-01-01"], [2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
+        row(["40004", "Wave 1", "Success", "No", "N/A", "Other", "silver", "", "2026-10-21", "2026-10-24", "", "Yes", "2027-01-01"], [1, 500, 0, 0, 0, 0, 0, 65, 0, 1, 1]),
+        row(["40005", "Wave 1", "Needs Follow-up", "No", "N/A", "Other", "", "", "2026-10-19", "", "", "Yes", "2027-01-01"], [3, 0, 0, 0, 10, 0, 0, 0, 0, 3, 0]),
+        row(["40006", "Wave 2a", "Success", "No", "N/A", "Other", "gold", "gold", "2026-11-09", "2026-11-12", "", "Yes", "2027-01-01"], [1, 1000, 500, 0, 0, 0, 0, 0, 120, 3, 3]),
+        row(["40007", "Wave 2a", "In Progress", "No", "N/A", "Other", "", "", "2026-11-10", "", "", "Yes", "2027-01-01"], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
+        row(["40008", "Wave 2a", "Not Started", "No", "N/A", "Other", "", "", "", "", "", "Yes", "2027-01-01"], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
+        row(["40009", "Wave 1", "Success", "No", "N/A", "Other", "silver", "", "2026-10-22", "2026-10-27", "", "Yes", "2027-01-01"], [1, 500, 250, 0, 0, 0, 0, 0, 0, 2, 2]),
+        row(["40010", "Wave 1", "Abandoned", "Yes", "After PSP", "Other", "waived", "", "2026-10-19", "", "2026-11-05", "Yes", "2027-01-01"], [2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
+        row(["40011", "Wave 2b", "Success", "No", "N/A", "Other", "gold", "gold", "2026-11-09", "2026-11-14", "", "Yes", "2027-01-01"], [1, 1000, 0, 0, 25, 0, 0, 0, 0, 5, 5]),
+        row(["40012", "Wave 1", "Not Started", "No", "N/A", "Other", "", "", "", "", "", "Yes", "2027-01-01"], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
+        row(["40013", "Wave 1", "Success", "No", "N/A", "Other", "silver", "silver", "2026-10-23", "2026-10-28", "", "Yes", "2027-01-01"], [1, 500, 0, 0, 0, 0, 0, 88, 0, 2, 2]),
+        row(["40014", "Wave 2a", "Needs Follow-up", "No", "N/A", "Other", "", "", "2026-11-09", "", "", "Yes", "2027-01-01"], [2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]),
+        // Prior-cycle rows (EventDate 2026-01-01). 40001: plan/HSA changed,
+        // Supp Life added; 40002: unchanged; 40006: plan changed, pretax
+        // dropped. 40011..40014 have no prior row (new this year). 40099 is
+        // prior-only -- not in this year's population, must NOT appear.
+        row(["40001", "Wave 1", "Success", "No", "N/A", "Other", "bronze", "basic", "2025-10-19", "2025-10-22", "", "Yes", "2026-01-01"], [1, 400, 250, 0, 0, 0, 0, 88, 0, 2, 2]),
+        row(["40002", "Wave 1", "Success", "No", "N/A", "Other", "gold", "gold", "2025-10-20", "2025-10-25", "", "Yes", "2026-01-01"], [1, 1000, 0, 0, 20, 10, 0, 0, 145, 4, 4]),
+        row(["40006", "Wave 2a", "Success", "No", "N/A", "Other", "silver", "gold", "2025-11-09", "2025-11-12", "", "Yes", "2026-01-01"], [1, 1000, 500, 0, 0, 0, 0, 100, 120, 3, 3]),
+        row(["40099", "Wave 1", "Success", "No", "N/A", "Other", "silver", "silver", "2025-10-19", "2025-10-22", "", "Yes", "2026-01-01"], [1, 500, 0, 0, 0, 0, 0, 0, 0, 1, 1]),
     ] };
+
+    // Enrollment cycle identified by EventDate's year -- same annual-
+    // maintenance literals as the cube and the detail widget.
+    const CURRENT_EVENT_YEAR = 2027;
+    const PRIOR_EVENT_YEAR = 2026;
+    function eventYear(str) {
+        const m = /(\d{4})/.exec(str || "");
+        return m ? Number(m[1]) : 0;
+    }
 
     const template = document.createElement("template");
     template.innerHTML = `
@@ -128,6 +145,9 @@
             .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; }
             .num { text-align: right; font-variant-numeric: tabular-nums; }
             .defaulted-tag { font-size: 10px; color: var(--danger); }
+            .prior { font-size: 10px; color: var(--text-soft); }
+            .chg { color: var(--accent); font-weight: 700; }
+            .cycle-note { font-size: 10.5px; color: var(--text-soft); margin: -8px 0 12px; }
         </style>
         <div class="dashboard">
             <div class="eyebrow">2026 Annual Enrollment — Portico Employees</div>
@@ -136,6 +156,7 @@
                 <span class="badge accent" id="dataBadge">Mock Data — Preview</span>
             </div>
             <div class="asof" id="asof"></div>
+            <div class="cycle-note" id="cycleNote"></div>
 
             <div class="grid" id="tiles"></div>
 
@@ -202,6 +223,7 @@
                 retirementRothAmount: this._measure(r, 8),
                 eligibleCount: this._measure(r, 9),
                 coveredCount: this._measure(r, 10),
+                eventYear: eventYear(this._dim(r, 12)),
             };
         }
         _statusPriority(status) { return STATUS_PRIORITY[status] || 99; }
@@ -221,7 +243,21 @@
             // Only Is_Portico_Employee = "Yes" -- opposite of the main
             // suite's exclusion filter, same model/binding shape.
             const rawRows = (this._memberDetail && this._memberDetail.data) || [];
-            const rows = rawRows.map((r) => this._parseRow(r)).filter((m) => m.isPorticoEmployee === "Yes");
+            const allRows = rawRows.map((r) => this._parseRow(r)).filter((m) => m.isPorticoEmployee === "Yes");
+
+            // One employee can arrive as a row per cycle once EventDate is
+            // bound, so tiles and the table work off the CURRENT-cycle row
+            // per employee (never count rows -- that would double-count),
+            // with the prior-cycle row alongside for comparison. If
+            // EventDate isn't bound, fall back to treating every row as
+            // current and say so.
+            const eventDateBound = allRows.some((m) => m.eventYear > 0);
+            const priorByMember = {};
+            if (eventDateBound) allRows.filter((m) => m.eventYear === PRIOR_EVENT_YEAR).forEach((m) => { priorByMember[m.member] = m; });
+            const rows = eventDateBound ? allRows.filter((m) => m.eventYear === CURRENT_EVENT_YEAR) : allRows;
+            root.getElementById("cycleNote").textContent = eventDateBound
+                ? "Each election shows this year, with last year in grey beneath; changed values are highlighted."
+                : "EventDate is not bound on this widget (add it as the last dimension) — prior-year comparison unavailable.";
 
             const totalSetUp = rows.length;
             const completed = rows.filter((m) => m.enrollmentStatus === "Success").length;
@@ -246,20 +282,32 @@
                 return diff !== 0 ? diff : (a.member || "").localeCompare(b.member || "");
             });
 
-            root.getElementById("memberRows").innerHTML = sorted.map((m) => `
+            // Election cell: this year on top, last year in grey beneath
+            // (only when the employee has a prior-cycle row); highlighted
+            // when the two differ.
+            const cell = (m, p, get, numeric) => {
+                const c = get(m);
+                if (!p) return `<td${numeric ? ' class="num"' : ""}>${c}</td>`;
+                const old = get(p);
+                return `<td${numeric ? ' class="num"' : ""}><div class="${old !== c ? "chg" : ""}">${c}</div><div class="prior">${old}</div></td>`;
+            };
+            root.getElementById("memberRows").innerHTML = sorted.map((m) => {
+                const p = priorByMember[m.member];
+                return `
                 <tr>
                     <td>${m.member}</td>
                     <td><span class="status-dot" style="background:${this._statusColor(m.enrollmentStatus)};"></span>${this._statusLabel(m.enrollmentStatus)}</td>
-                    <td>${m.healthPlan || "—"}</td>
-                    <td class="num">${this._money(m.hsaAmount)}</td>
-                    <td class="num">${this._money(m.retirementPretaxAmount)}</td>
-                    <td class="num">${this._money(m.retirementRothAmount)}</td>
-                    <td class="num">${this._money(m.suppLifeAmount)}</td>
-                    <td>${m.visionPlan || "—"}</td>
+                    ${cell(m, p, (x) => x.healthPlan || "—", false)}
+                    ${cell(m, p, (x) => this._money(x.hsaAmount), true)}
+                    ${cell(m, p, (x) => this._money(x.retirementPretaxAmount), true)}
+                    ${cell(m, p, (x) => this._money(x.retirementRothAmount), true)}
+                    ${cell(m, p, (x) => this._money(x.suppLifeAmount), true)}
+                    ${cell(m, p, (x) => x.visionPlan || "—", false)}
                     <td class="num">${m.eligibleCount || "—"}</td>
                     <td class="num">${m.coveredCount || "—"}</td>
                     <td>${m.defaulted === "Yes" ? `<span class="defaulted-tag">${m.defaultedTiming}</span>` : "—"}</td>
-                </tr>`).join("");
+                </tr>`;
+            }).join("");
         }
     }
 

@@ -1,7 +1,7 @@
 {
     "id": "com.porticobenefits.memberportico",
     "name": "Portico Employee Enrollment",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "vendor": "Portico Benefits",
     "license": "",
     "eula": "",
@@ -13,7 +13,7 @@
             "kind": "main",
             "tag": "com-porticobenefits-memberportico",
             "url": "https://bboehm1986.github.io/sac-member-portico-widget/main.js",
-            "integrity": "sha384-mdpbduqGiwCNP+nmvF4c5AjwuSXM5BSYWkCSrF19XPxwvFkRD5Oo2z0gvsS0zUNU"
+            "integrity": "sha384-jliIULKmR/kuQ3b3xLRAQfvO7SlK16LVGzZwaQyQ5G74DPqjsbyattE3OVT3tCyp"
         }
     ],
     "properties": {
@@ -31,7 +31,7 @@
             "feeds": [
                 {
                     "id": "dimensions",
-                    "description": "Same model/shape as sac-member-detail-widget's memberDetail binding -- Member / Wave / Enrollment_Status / Defaulted / Defaulted_Timing / Membership_Type / Member_Health_Coverage / Vision_Plan / Set_Up_Date / Completed_Date / Abandoned_Date / Is_Portico_Employee, from GLD_AE_Member_Enrollment directly (row-level, PII-bearing) via AM_MEMBER_ENROLLMENT_DETAIL. This widget filters to Is_Portico_Employee = 'Yes' (opposite of the main suite's exclusion) and shows every matching row directly -- no Input Control needed, population is small enough (~200) to list in full.",
+                    "description": "Same model/shape as sac-member-detail-widget's memberDetail binding -- Member / Wave / Enrollment_Status / Defaulted / Defaulted_Timing / Membership_Type / Member_Health_Coverage / Vision_Plan / Set_Up_Date / Completed_Date / Abandoned_Date / Is_Portico_Employee / EventDate (13 dimensions; EventDate is LAST, added 2026-10-05 so each employee can carry a prior-cycle row for year-over-year comparison), from GLD_AE_Member_Enrollment directly (row-level, PII-bearing) via AM_MEMBER_ENROLLMENT_DETAIL. This widget filters to Is_Portico_Employee = 'Yes' (opposite of the main suite's exclusion) and shows every matching row directly -- no Input Control needed, population is small enough (~200) to list in full.",
                     "type": "dimension"
                 },
                 {

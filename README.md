@@ -52,10 +52,14 @@ Same shape as `sac-member-detail-widget`'s `memberDetail` binding, plus
 two measures that model already has but that widget doesn't currently
 use:
 
-**Dimensions (12, exact order):** Member, Wave, Enrollment_Status,
+**Dimensions (13, exact order):** Member, Wave, Enrollment_Status,
 Defaulted, Defaulted_Timing, Membership_Type, Member_Health_Coverage,
 Vision_Plan, Set_Up_Date, Completed_Date, Abandoned_Date,
-Is_Portico_Employee.
+Is_Portico_Employee, **EventDate** (added v1.1.0 — must be LAST; it marks
+this cycle vs. prior so each election cell can show last year's value
+beneath this year's, changed values highlighted. Counts and the table are
+per employee using the current-cycle row, never per row. If EventDate
+isn't bound the widget shows a notice and falls back to all rows.)
 
 **Measures (11, exact order):** Total_Attempts, HSA_Election_Amount,
 FSA_Health_Election_Amount, FSA_Dependent_Election_Amount,
