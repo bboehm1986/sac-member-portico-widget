@@ -78,16 +78,42 @@ needs to change on the widget side once it is.
 ## Status of this build
 
 - ✅ Designed, mocked up, and style-approved by Blair (2026-10-01).
-- ✅ Verified in `preview.html` against 14 illustrative mock rows — zero
-  console errors.
-- ⏳ Not yet hosted on GitHub Pages or registered in SAC.
-- ⏳ Not yet added to the "AE Member Selection" story.
+- ✅ Hosted on GitHub Pages, registered in SAC (v1.1.2), and bound in its
+  OWN story (Canvas — "Portico Employee Enrollment", not added to "AE
+  Member Selection"). Loads and reads "Live" (2026-10-05).
+- ✅ Prior-year elections shown beside this year's (v1.1.0, `EventDate` as
+  the 13th/last dimension).
+- ✅ Locked story filter `Is_Portico_Employee Contains "Yes"` applied (a
+  condition, because the member list can't offer "Yes" until a Portico
+  member exists in QA).
+- ⏳ **Shows 0 employees today — expected.** QA has zero Portico members
+  (all 110 rows are `'No'`); Blair is adding some. Don't treat the empty
+  state as a bug.
+- ⏳ Share the story with the HR audience ONLY — the model behind it is
+  row-level and identifiable, so sharing is what gates access.
 
-## Next steps
+## Notes for changing it
 
-1. Host on GitHub Pages, register in SAC.
-2. Bind `memberDetail` to `AM_MEMBER_ENROLLMENT_DETAIL` — Measures then
-   Dimensions, in the exact order listed above (SAC binds by position).
-3. Add to the story.
-4. Confirm against real data once bound — especially that
-   `Is_Portico_Employee = 'Yes'` actually returns the expected ~200 rows.
+- Counts and the table are per EMPLOYEE using the current-cycle row —
+  never per row. With two cycles arriving, counting rows would double
+  every headline number. An employee present only in the prior cycle is
+  not in this year's population and is excluded.
+- `CURRENT_EVENT_YEAR` / `PRIOR_EVENT_YEAR` in `main.js` are bumped every
+  cycle (same annual maintenance as the cube's `EventDate` literals).
+- If `EventDate` isn't bound the widget falls back to all rows and shows
+  one notice line; "bound" is judged from the rows SAC SENT, before the
+  Portico filter, so an all-non-Portico result is not mistaken for a
+  missing binding (fixed in v1.1.2).
+- Never put a control or filter on `EventDate`.
+- A `main.js` change breaks the live SAC registration until `widget.json`
+  is re-uploaded (hash mismatch); bump the version and warn before pushing.
+  GitHub Pages can sit "queued" for a long time — check the Actions runs
+  and the hosted `widget.json` before re-uploading.
+- No caveat / "open items" banners (Blair's standing decision,
+  2026-10-05).
+
+## Still to do
+
+1. Confirm against real data once QA has Portico members — the count
+   should be ~200, and prior-year values should appear where history exists.
+2. Eligible/Covered columns stay blank until BR-29 is fixed in Gold.
