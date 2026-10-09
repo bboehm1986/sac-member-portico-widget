@@ -150,7 +150,7 @@
             .cycle-note { font-size: 10.5px; color: var(--text-soft); margin: -8px 0 12px; }
         </style>
         <div class="dashboard">
-            <div class="eyebrow">2026 Annual Enrollment — Portico Employees</div>
+            <div class="eyebrow">2027 Annual Enrollment — Portico Employees</div>
             <div class="titlewrap">
                 <h1>Portico Employee Enrollment</h1>
                 <span class="badge accent" id="dataBadge">Mock Data — Preview</span>
