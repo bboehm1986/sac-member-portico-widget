@@ -80,7 +80,7 @@ needs to change on the widget side once it is.
 - ✅ Designed, mocked up, and style-approved by Blair (2026-10-01).
 - ✅ Hosted on GitHub Pages, registered in SAC (v1.1.2), and bound in its
   OWN story (Canvas — "Portico Employee Enrollment", not added to "AE
-  Member Selection"). Loads and reads "Live" (2026-10-05).
+  Member Election"). Loads and reads "Live" (2026-10-05).
 - ✅ Prior-year elections shown beside this year's (v1.1.0, `EventDate` as
   the 13th/last dimension).
 - ✅ Locked story filter `Is_Portico_Employee Contains "Yes"` applied (a
